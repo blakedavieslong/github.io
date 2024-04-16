@@ -1,0 +1,163 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Helvetica;
+  font-size: 22px;
+  color: seashell;
+  background-color: black;
+  opacity: 0.9;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+.logo {
+  margin-left: 10px;
+  height: 50px;
+}
+
+.heading {
+  display: flex;
+  width: 100%;
+  height: 69px;
+  position: fixed;
+  border-bottom: 1px solid seashell;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  opacity: 1;
+  z-index: 2;
+}
+
+.navbar li {
+  display: inline;
+  margin-right: 25px;
+}
+
+main {
+  margin-top: 69px;
+}
+
+.container {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.backSplash {
+  height: 700px;
+  width: 1200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.textWrap {
+  opacity: 1;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  height: auto;
+  text-align: center;
+  z-index: 1;
+}
+
+h2 {
+  font-size: 22px;
+  margin: 10px 10px;
+  background-color: transparent;
+}
+
+h4 {
+  font-size: 18px;
+  margin: 10px 10px;
+}
+
+#featuredTea {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.products {
+  width: 1000px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+.product {
+  width: 300px;
+  height: 200px;
+  margin: 10px 10px;
+}
+
+.backSplashLocation {
+  height: 500px;
+  width: 1200px;
+  display: block;
+  margin: 3rem auto 0 auto;
+  object-fit: cover;
+}
+
+.textWrapLocation {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.locations {
+  display: flex;
+  width: 1200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  gap: 40px;
+  background-color: transparent;
+}
+
+.location {
+  opacity: 1;
+  background-color: black;
+  width: 300px;
+  height: auto;
+  text-align: center;
+  z-index: 1;
+}
+
+h3 {
+  margin: 1rem 0;
+}
+
+.location h4 {
+  margin: 1rem 0;
+}
+
+h5 {
+  margin: 1rem auto;
+}
+
+footer {
+  text-align: center;
+  height: 200px;
+}
+
+.left {
+  text-align: left;
+  padding-left: 20px;
+  margin: 0;
+}

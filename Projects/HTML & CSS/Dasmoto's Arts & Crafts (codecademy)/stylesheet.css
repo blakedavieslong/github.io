@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: Helvetica;
+    font-size: 100px;
+    font-weight: bold;
+    color: khaki;
+    text-align: center;
+    background-image: url("./pattern.jpeg");
+}
+
+h2 {
+    font-family: Helvetica;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    padding-left: 10px;
+}
+
+#hBrush {
+    background-color: mediumspringgreen;
+}
+
+#hFrame {
+    background-color: lightcoral;
+}
+ 
+#hPaint {
+    background-color: skyblue;
+}
+
+figcaption {
+    font-family: Helvetica;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+p {
+    font-family: Helvetica;
+    margin: 1rem 10px;
+}
+
+.saleHighlight {
+    font-family: Helvetica;
+    font-weight: bold;
+    color: blue;
+}
+
+figure {
+    margin: 1rem 10px;
+}
