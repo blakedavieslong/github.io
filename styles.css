@@ -4,14 +4,8 @@
   box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  * {
-    scroll-behavior: smooth;
-  }
-}
-
 html {
-  font-size: 62.5%;
+  font-size: 16px;
 }
 
 body {
@@ -19,25 +13,31 @@ body {
   color: linen;
 }
 
+.navbar {
+  display: flex;
+  font-size: 2rem;
+  align-items: center;
+  gap: 2rem;
+}
+
 h1 {
-  font-size: 5em;
+  font-size: 3rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-style: normal;
   width: 100%;
 }
 
-p {
-  font-size: 2.5em;
+h2 {
+  font-size: 2rem;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
   width: 100%;
 }
 
-h2 {
-  font-size: 28;
-  font-family: "Poppins", sans-serif;
+.projects h2 {
+  font-size: 2rem;
   font-weight: 400;
   font-style: normal;
   color: black;
@@ -54,16 +54,22 @@ hr {
   border: 1px solid rgba(120, 120, 120, 0.6);
 }
 
-.heading {
+header {
   display: flex;
   background-color: white;
   width: 100%;
-  height: 50px;
+  height: 3rem;
   padding-right: 10px;
   justify-content: right;
   position: fixed;
   z-index: 999;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+.profilePicture {
+  width: 10rem;
+  height: auto;
+  border-radius: 10px;
 }
 
 .plate {
@@ -86,10 +92,6 @@ hr {
   left: 7.5%;
   border-radius: 25px 25px;
   z-index: 1;
-}
-
-h3 {
-  color: black;
 }
 
 .projects {
@@ -120,19 +122,52 @@ h3 {
 }
 
 .project-link {
-  background: linear-gradient(90deg,rgb(41,61,92), rgb(39,37,85));
+  background: linear-gradient(0deg,rgb(41,61,92), rgb(39,37,85));
   width: 300px;
   height: 75px;
+  border-radius: 10px;
 }
 
+.contact {
+  font-family: "Poppins", sans-serif;
+}
 
-.navbar {
+.contact h3 {
+  margin-bottom: 1rem;
+}
+
+.languages {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 2rem 5rem;
+  margin: 2rem 0 7rem 0;
+}
+
+.contactLinks {
   display: flex;
-  font-size: 3rem;
-  align-items: center;
-  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-.fa-github:before {
-  content: "\f09b";
+.button {
+  padding: 1rem 2rem;
+  display: inline-block;
+  color: white;
+  transition: transform 0.3s ease-out;
+}
+
+.button:hover {
+  transform: translateY(0.5rem);
+}
+
+.progress4GL {
+  width: 1.2rem;
+  height: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
 }
