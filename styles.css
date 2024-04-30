@@ -98,7 +98,7 @@ header {
 .projects {
   background-color: #F8F9FE;
   padding: 2rem;
-  height: 100vh;
+  height: 200vh;
   text-align: center;
 }
 
@@ -114,13 +114,15 @@ header {
 }
 
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  display: flex;
+ /* grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));*/
+  flex-wrap: wrap;
   grid-gap: 4rem;
   width: 100%;
   margin: 2rem auto;
   justify-content: space-evenly;
-  
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 .project-link {
@@ -195,5 +197,40 @@ figcaption {
 @media (prefers-reduced-motion: no-preference) {
   * {
     scroll-behavior: smooth;
+  }
+}
+
+
+
+@media only screen and (max-device-width: 895px) {
+  .projects {
+    height: 300vh;
+  }
+}
+
+@media only screen and (max-device-width: 757px) {
+  .projects {
+    height: 310vh;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  html {
+    font-size: 8px;
+  }
+  .projects {
+    height: 80vh;
+  }
+}
+
+@media only screen and (max-device-width: 447px) {
+  .projects {
+    height: 155vh;
+  }
+}
+
+@media only screen and (max-device-width: 378px) {
+  .projects {
+    height: 160vh;
   }
 }
