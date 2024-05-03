@@ -157,8 +157,8 @@ header {
 
 .projects {
   background-color: #F8F9FE;
-  padding: 2rem;
-  height: 100vh;
+  padding-top: 1rem;
+  height: 85vh;
   text-align: center;
 }
 
@@ -175,14 +175,11 @@ header {
 
 .project-grid {
   display: flex;
- /* grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));*/
   flex-wrap: wrap;
   grid-gap: 4rem;
   width: 100%;
   margin: 2rem auto;
   justify-content: space-evenly;
-  overflow-x: auto;
-  overflow-y: auto;
 }
 
 .project-link {
@@ -260,21 +257,21 @@ figcaption {
   }
 }
 
-@media only screen and (max-device-width: 1343px) {
+@media only screen and (max-device-width: 1279px) {
   .projects {
     height: 125vh;
   }
 }
 
-@media only screen and (max-device-width: 895px) {
+@media only screen and (max-device-width: 831px) {
   .projects {
-    height: 245vh;
+    height: 240vh;
   }
 }
 
-@media only screen and (max-device-width: 757px) {
+@media only screen and (max-device-width: 693px) {
   .projects {
-    height: 250vh;
+    height: 245vh;
   }
 }
 
@@ -287,13 +284,13 @@ figcaption {
   }
 }
 
-@media only screen and (max-device-width: 447px) {
+@media only screen and (max-device-width: 415px) {
   .projects {
-    height: 155vh;
+    height: 120vh;
   }
 }
 
-@media only screen and (max-device-width: 378px) {
+@media only screen and (max-device-width: 346px) {
   .projects {
     height: 125vh;
   }
