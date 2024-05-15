@@ -200,6 +200,13 @@ const getAllFromDatabase = (modelType) => {
   return model.data;
 }
 
+const getAllWorkForMinionFromDatabase = (id) => {
+  const model = db.allWork;
+  return model.data.filter((element) => {
+    return element.id === id;
+  });
+}
+
 const getFromDatabaseById = (modelType, id) => {
   const model = findDataArrayByName(modelType);
   if (model === null) {
@@ -271,4 +278,5 @@ module.exports = {
   updateInstanceInDatabase,
   deleteFromDatabasebyId,
   deleteAllFromDatabase,
+  getAllWorkForMinionFromDatabase
 };
