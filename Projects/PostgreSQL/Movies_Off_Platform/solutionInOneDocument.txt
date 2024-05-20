@@ -1,0 +1,52 @@
+CREATE TABLE films (
+  name TEXT,
+	release_year INTEGER
+);
+
+INSERT INTO films (name, release_year)
+VALUES 
+('The Matrix', 1999),
+('Monster''s Inc.', 2001),
+('Call Me By Your Name', 2017);
+
+SELECT * FROM films
+WHERE release_year = 1989;
+
+ALTER TABLE films
+ADD runtime INTEGER;
+
+ALTER TABLE films
+ADD category TEXT;
+
+ALTER TABLE films
+ADD rating TEXT;
+
+ALTER TABLE films
+ADD earnings BIGINT;
+
+UPDATE films
+SET
+	runtime = 136,
+  category = 'Action, Sci-Fi',
+  rating = '14A',
+  earnings = 467623299
+WHERE name = 'The Matrix';
+
+UPDATE films
+SET
+	runtime = 92,
+  category = 'Animation, Adventure, Comedy',
+  rating = 'G',
+  earnings = 579723768
+WHERE name = 'Monster''s Inc.';
+
+UPDATE films
+SET
+	runtime = 132,
+  category = 'Drama, Romance',
+  rating = '14A',
+  earnings = 43368603
+WHERE name = 'Call Me By Your Name';
+
+ALTER TABLE films
+ADD CONSTRAINT unique_name UNIQUE (name);
