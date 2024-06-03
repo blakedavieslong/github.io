@@ -1,7 +1,7 @@
 const express = require('express'),
       server = express(),
-	fs = require('fs'),
-      orderData = require('./orders');
+	fs = require('fs')
+let   orderData = require('./orders');
 	  
 server.set('port', process.env.PORT || 3000);
 
@@ -12,6 +12,7 @@ server.get('/',(request,response)=>{
 
 //Add the /orders code here!
 server.get('/orders',(request,response)=>{
+      orderData = require('./orders');
       response.json(orderData);
 });
 
