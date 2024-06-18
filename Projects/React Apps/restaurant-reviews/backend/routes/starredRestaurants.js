@@ -48,24 +48,117 @@ router.get("/", (req, res) => {
 /**
  * Feature 7: Getting a specific starred restaurant.
  */
+router.get("/:id", (req, res) => {
+  const id = req.params.id;
+  const starredRestaurant = STARRED_RESTAURANTS.find(
+    (restaurant) => restaurant.id === id);
 
+  if (!starredRestaurant){
+    res.sendStatus(404);
+    return;
+  };
 
+  const restaurant = ALL_RESTAURANTS.find(
+    (restaurant) => restaurant.id === starredRestaurant.restaurantId
+  );
+
+  if (!restaurant){
+    res.sendStatus(404);
+    return;
+  }
+
+  res.json({
+    id: starredRestaurant.id,
+    comment: starredRestaurant.comment,
+    name: restaurant.name
+   });
+});
 
 /**
  * Feature 8: Adding to your list of starred restaurants.
  */
+router.post("/", (req, res) => {
+  const { body } = req;
+  const restaurantId = body.id;
+  
+  const restaurant = ALL_RESTAURANTS.find((restaurant) => restaurant.id === restaurantId);
+  if (!restaurant) {
+    res.sendStatus(404);
+    return;
+  }
+  
+  const starredRestaurant = STARRED_RESTAURANTS.find(
+    (restaurant) => restaurant.restaurantId === restaurantId);
+  
+  if (starredRestaurant){
+    res.sendStatus(404);
+    return;
+  };
 
+  const id = uuidv4();
+  STARRED_RESTAURANTS.push({
+    id: id,
+    restaurantId: restaurantId,
+    comment: ''
+  });
+
+  res.status(200).json({
+    id: id,
+    comment: '',
+    name: restaurant.name
+   });;
+});
 
 
 /**
  * Feature 9: Deleting from your list of starred restaurants.
  */
+router.delete("/:id", (req, res) => {
+  const id = req.params.id;
 
+  const starredRestaurant = STARRED_RESTAURANTS.find(
+    (restaurant) => restaurant.id === id);
+
+  if (!starredRestaurant){
+    res.sendStatus(404);
+    return;
+  };
+
+  STARRED_RESTAURANTS = STARRED_RESTAURANTS.filter((restaurant) => restaurant.id !== id)
+
+  res.sendStatus(200);
+});
 
 /**
  * Feature 10: Updating your comment of a starred restaurant.
  */
+router.put("/:id", (req, res) => {
+  const { body } = req;
+  const id= req.params.id;
+  const comment = body.comment;
 
+  const starredRestaurant = STARRED_RESTAURANTS.find(
+    (restaurant) => restaurant.id === id);
+  
+  if (!starredRestaurant){
+    res.sendStatus(404);
+    return;
+  };
+
+  const restaurant = ALL_RESTAURANTS.find((restaurant) => restaurant.id === starredRestaurant.restaurantId);
+  if (!restaurant) {
+    res.sendStatus(404);
+    return;
+  }
+
+  starredRestaurant.comment = comment;
+
+  res.status(200).json({
+    id: id,
+    comment: comment,
+    name: restaurant.name
+   });
+});
 
 
 module.exports = router;
